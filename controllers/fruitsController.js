@@ -1,21 +1,23 @@
-const { response } = require('express')
-const FruitModel = require('../models/FruitModel')
+const FruitModel = require('../models/FruitModel');
 
 const showAllFruits = async ( request, response) => {
     try {
-        const fruits = await FruitModel.showAllFruits()
-        response.status(200).send(fruits)
+        const fruits = await FruitModel.showAllFruits();
+        response.status(200).send(fruits);
     } catch(error) {
         response.status(500).send({error: error})
     }
 }
 
 const showFruit = async (request, response) => {
-    const name = request.params.name.toLowercase()
+    const name = request.params.name.toLowerCase();
+    console.log(name)
+
     try {
-    const fruit = await FruitsModel.showFruit(name)
-    response.status(200).send(fruit)
-    } catch(error){
+        const fruit = await FruitModel.showFruit(name);
+        response.status(200).send(fruit);
+    } 
+    catch(error) {
        response.status(404).send ({error: error})
     }
 }
