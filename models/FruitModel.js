@@ -14,13 +14,13 @@ class FruitModel {
         return fruitsArray.map(f => new FruitModel(f));
     }
 
-    // function to access fruit by name
+    // 
     static showFruit(name) { // function to look at fruit by (name)
         const fruit = fruitsArray.filter (fruit => 
             fruit.name.toLowerCase().startsWith(name.toLowerCase())) 
     
-        if (fruits.length > 0) {
-            return fruits.map(f => new FruitModel(f)) 
+        if (fruit.length > 0) {
+            return fruit.map(f => new FruitModel(f)) 
         }else {
             throw "No fruits found with that name"
         }
@@ -49,14 +49,6 @@ class FruitModel {
         }
     }
 
-    delete(data) {
-        const deleteFruit = fruitsArray.find (
-            fruit => fruit.name.toLowerCase() === this.name.toLowerCase())
-        if(deleteFruit) {
-            // deleteFruit.name = data.name
-            return new FruitModel(deleteFruit)
-        }
-    }
 }
 
 module.exports = FruitModel;

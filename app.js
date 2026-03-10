@@ -4,7 +4,7 @@ const fruitsApp = express()
 const fruitRoutes = require('./routes/fruitRoutes')
 
 fruitsApp.use(cors())
-fruitsApp.use(express.json)
+fruitsApp.use(express.json())
 fruitsApp.use('/fruits', fruitRoutes)
 
 module.exports = fruitsApp

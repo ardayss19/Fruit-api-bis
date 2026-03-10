@@ -43,17 +43,4 @@ const updateFruit = async (request, response) => {
 }
 
 
-const deleteFruit = async (request, response) => {
-    const name = request.params.name.toLowercase();
-
-    try{
-        const fruit = await FruitModel.showFruit(name);
-        const result = await fruit.delete(request.body)
-
-        response.status(200).send(result);
-    }catch (error) {
-        response.status(404).send({error: error});
-    }
-}
-
-module.exports = {showAllFruits, showFruit, createFruit, updateFruit, deleteFruit}
+module.exports = {showAllFruits, showFruit, createFruit, updateFruit}
