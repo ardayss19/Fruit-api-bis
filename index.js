@@ -1,6 +1,6 @@
 require('dotenv').config()
 const app = require('./app')
-const port = process.env
+const port = process.env.PORT
 
 app.listen(port, () => {
     console.log(`Fruit API listening on port ${port}`);
